@@ -20,13 +20,25 @@ public class Vectors {
 //		}
 		
 		
-		Vector vector = new Vector();
+		Vector vector = new Vector(2500, 500);
 		
-		for (int i=0; i < 11; i++) {
-			vector.add(i);
+		for (int i=0; i < 100; i++) {
+			/*
+			 * vector.add(i) adds the simple type "i" to the vector
+			 * by "autoboxing", i.e. turning it into an Integer object
+			 */
+			boolean success = vector.add(i);
+			
+			/* 
+			 * vector.add() below explicitly turns "i" into an object, 
+			 * so no "autoboxing"
+			 */
+			success = vector.add(Integer.valueOf(i));
+			
 			System.out.println("Size = " + vector.size() 
 						+ "  Capacity = " + vector.capacity() 
-						+ "  Data = " + vector.getLast());
+						+ "  Data = " + vector.getLast()
+						+ "  Success = " + success);
 		}
 
 	}
