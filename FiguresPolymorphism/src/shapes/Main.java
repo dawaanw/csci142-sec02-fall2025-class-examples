@@ -33,9 +33,23 @@ public class Main {
 		shapes[2] = new Rectangle();
 		shapes[3] = new Rectangle();
 		
+		for (Shape shape : shapes) {
+			shape.setColor(Color.BLACK);
+			if (shape instanceof Square) {
+				((Square)shape).setSideLength(5.0);
+			}
+			else if (shape instanceof Rectangle) {
+				((Rectangle)shape).setWidth(5.0);
+			}
+			
+		}
+		
+		
 		for (int i=0; i < 4; i++) {
 			System.out.println(shapes[i]);
 		}
+		
+		
 
 	}
 
