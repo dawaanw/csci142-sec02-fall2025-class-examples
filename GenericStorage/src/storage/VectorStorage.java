@@ -2,21 +2,21 @@ package storage;
 
 import java.util.Vector;
 
-public class VectorStorage implements Storage{
-	private Vector data;
+public class VectorStorage<T extends Number> implements Storage<T>{
+	private Vector<T> data;
 	
 	public VectorStorage() {
-		data = new Vector();
+		data = new Vector<T>();
 	}
 	
 	@Override
-	public boolean add(Integer o) {
+	public boolean add(T o) {
 		return data.add(o);
 	}
 
 	@Override
-	public Integer remove(int index) throws ArrayIndexOutOfBoundsException {
-		return (Integer) data.remove(index);
+	public T remove(int index) throws ArrayIndexOutOfBoundsException {
+		return data.remove(index);
 	}
 
 	@Override

@@ -9,16 +9,16 @@ import storage.VectorStorage;
 
 class TestVectorStorage {
 	
-	private VectorStorage data;
+	private VectorStorage<Double> data;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		data = new VectorStorage();
+		data = new VectorStorage<Double>();
 	}
 
 	@Test
 	void testAddOneElement() {
-		assertTrue(data.add(4), "Should be able to add one element");
+		assertTrue(data.add(4.0), "Should be able to add one element");
 		assertEquals(1, data.count(), "Added one element, should have count = 1");
 	}
 	
